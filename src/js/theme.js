@@ -6,7 +6,7 @@ const Theme = {
   DARK: "dark-theme",
 };
 
-switchEl.addEventListener("click", onCheckboxClick);
+switchEl.addEventListener("change", onCheckboxClick);
 
 const currentTheme = localStorage.getItem("theme");
 
@@ -31,4 +31,4 @@ function addCurrentTheme() {
 }
 
 addCurrentTheme();
-switchEl.addEventListener("click", onCheckboxClick);
+switchEl.addEventListener("change", onCheckboxClick);
