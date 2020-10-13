@@ -8,6 +8,8 @@ const Theme = {
 
 switchEl.addEventListener("click", onCheckboxClick);
 
+const currentTheme = localStorage.getItem("theme");
+
 function onCheckboxClick(event) {
   if (switchEl.checked) {
     body.classList.add(Theme.DARK);
@@ -18,3 +20,15 @@ function onCheckboxClick(event) {
     localStorage.setItem("theme", Theme.LIGHT);
   }
 }
+
+function addCurrentTheme() {
+  if (currentTheme) {
+    body.classList.add(currentTheme);
+  }
+  if (body.classList.contains(Theme.DARK)) {
+    switchEl.checked = true;
+  }
+}
+
+addCurrentTheme();
+switchEl.addEventListener("click", onCheckboxClick);
